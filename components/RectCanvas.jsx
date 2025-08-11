@@ -1,9 +1,8 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import CanvasShapes from './CanvasShapes';
 
-export default function RectCanvas({ rects, children }) {
+export default function RectCanvas({ rects, currentTime, children }) {
   const [canvasSize, setCanvasSize] = useState({ width: 1, height: 1 });
-
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -16,14 +15,11 @@ export default function RectCanvas({ rects, children }) {
   }, [children]);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full select-none overflow-hidden"
-    >
+    <div ref={containerRef} className="relative w-full select-none overflow-hidden">
       <div className="relative w-full h-full overflow-hidden border border-gray-300 rounded-lg">
-        {/* Children will be rendered here */}
+        {/* Children (video player) will be rendered here */}
         {children}
-        <CanvasShapes rects={rects} canvasSize={canvasSize} />
+        <CanvasShapes rects={rects} currentTime={currentTime} canvasSize={canvasSize} />
       </div>
     </div>
   );
