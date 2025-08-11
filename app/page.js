@@ -17,8 +17,26 @@ export default function Home() {
       {
         src: streamUrl,
         type: "application/x-mpegURL",
+        spriteThumbnails: {
+          // This is passed per-source
+          url: "/thumb.jpg",
+          width: 160,
+          height: 90,
+          columns: 10,
+          interval: 1,
+        },
       },
     ],
+    plugins: {
+      // Defaults for any source that has no spriteThumbnails set
+      spriteThumbnails: {
+        url: "/thumb.jpg",
+        width: 160,
+        height: 90,
+        columns: 10,
+        interval: 1,
+      },
+    },
   };
 
   const handlePlayerReady = (player) => {

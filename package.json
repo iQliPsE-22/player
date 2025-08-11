@@ -12,7 +12,9 @@
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "video.js": "^8.23.3"
+    "video.js": "^8.23.3",
+    "videojs-markers": "^1.0.1",
+    "videojs-sprite-thumbnails": "^2.2.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
