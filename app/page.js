@@ -44,11 +44,11 @@ export default function Home() {
 
     // You can handle player events here
     player.on("waiting", () => {
-      videojs.log("Player is waiting");
+      console.log("Player is waiting");
     });
 
     player.on("dispose", () => {
-      videojs.log("Player will dispose");
+      console.log("Player will dispose");
     });
   };
 
